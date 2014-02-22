@@ -1,0 +1,32 @@
+{
+  "author": "Alex",
+  "checksums": {
+    "Gemfile": "cfc700f541b4171ed02d9b09f3aaf09b",
+    "Modulefile": "e2963168265a32fd8e032710b0340bf8",
+    "README.markdown": "a47c442578af5514ee932cf3431e3274",
+    "Rakefile": "2e5dea091308aea0dc822af4a81f991c",
+    "manifests\\init.pp": "af80782b532180209e4807146719a5dc",
+    "spec\\spec.opts": "a600ded995d948e393fbe2320ba8e51c",
+    "spec\\spec_helper.rb": "3ea886dd135e120afa31e0aab12e85b0",
+    "templates\\mqtt.conf.erb": "5ae8a5cf1553ac8a2d005da55d10fb48",
+    "tests\\init.pp": "507beca0dfd45d81220ef88e59b241f1"
+  },
+  "dependencies": [
+    {
+      "name": "example42/yum",
+      "version_requirement": "\u003e\u003d1.2.9"
+    },
+    {
+      "name": "puppetlabs/apt",
+      "version_requirement": "\u003e\u003d1.4.1"
+    }
+  ],
+  "description": "This Module can be used to install and configure the mosquitto broker (http://www.mosquitto.org/).",
+  "license": "GPL v2",
+  "name": "puppet-mosquitto",
+  "project_page": "https://github.com/pennycoders/puppet-mosquitto",
+  "source": "https://github.com/pennycoders/puppet-mosquitto",
+  "summary": "Mosquitto Puppet Modules",
+  "types": [],
+  "version": "1.0.0"
+}

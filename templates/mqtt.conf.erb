@@ -1,0 +1,37 @@
+
+
+#Boolean value that determines whether clients that connect without providing a username are allowed to connect. If set to false then another means of connection should be created to control authenticated client access. Defaults to true. Reloaded on reload signal.
+allow_anonymous <%= @allow_anonymous %>
+
+#Options to be passed to the auth plugin. See the specific plugin instructions.
+auth_opt_qos <%= @auth_opt_qos %>
+
+#If set to true, the log will include entries when clients connect and disconnect. If set to false, these entries will not appear. Reloaded on reload signal.
+connection_messages <%= @connection_messages %>
+
+#The maximum number of QoS 1 or 2 messages that can be in the process of being transmitted simultaneously. This includes messages currently going through handshakes and messages that are being retried. Defaults to 20. Set to 0 for no maximum. If set to 1, this will guarantee in-order delivery of messages.
+max_inflight_messages <%= @max_inflight_messages %>
+
+
+#The maximum number of QoS 1 or 2 messages to hold in the queue above those messages that are currently in flight. Defaults to 100. Set to 0 for no maximum (not recommended). See also the queue_qos0_messages option. Reloaded on reload signal.
+max_queued_messages <%= @max_queued_messages %>
+
+#This option sets the maximum publish payload size that the broker will allow. Received messages that exceed this size will not be accepted by the broker. The default value is 0, which means that all valid MQTT messages are accepted. MQTT imposes a maximum payload size of 268435455 bytes.
+message_size_limit <%= @message_size_limit %>
+
+#If true, connection, subscription and message data will be written to the disk in mosquitto.db at the location dictated by persistence_location. When mosquitto is restarted, it will reload the information stored in mosquitto.db. The data will be written to disk when mosquitto closes and also at periodic intervals as defined by autosave_interval. Writing of the persistence database may also be forced by sending mosquitto the SIGUSR1 signal. If false, the data will be stored in memory only. Defaults to false. Reloaded on reload signal.
+persistence <%= @persistence %>
+
+#This option allows persistent clients (those with clean session set to false) to be removed if they do not reconnect within a certain time frame. This is a non-standard option. As far as the MQTT spec is concerned, persistent clients persist forever.Badly designed clients may set clean session to false whilst using a randomly generated client id. This leads to persistent clients that will never reconnect. This option allows these clients to be removed.The expiration period should be an integer followed by one of d w m y for day, week, month and year respectively. For example:As this is a non-standard option, the default if not set is to never expire persistent clients. Reloaded on reload signal.
+persistent_client_expiration <%= @persistent_client_expiration %>
+
+# Set to true to queue messages with QoS 0 when a persistent client is disconnected. These messages are included in the limit imposed by max_queued_messages. Defaults to false.
+queue_qos0_messages <%= @queue_qos0_messages %>
+
+
+
+#Listen for incoming network connection on the specified port. A second optional argument allows the listener to be bound to a specific ip address/hostname. If this variable is used and neither bind_address nor port are used then the default listener will not be started. This option may be specified multiple times. See also the mount_point option.
+listener <%= @listen_port %> <%= @listen_ip %>
+
+#Limit the total number of clients connected for the current listener. Set to -1 to have "unlimited" connections. Note that other limits may be imposed that are outside the control of mosquitto. See e.g. limits.conf(5). Not reloaded on reload signal.
+max_connections <%= @max_connections %>
