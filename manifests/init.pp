@@ -45,13 +45,14 @@ class mosquitto (
     require => [Yum::Managed_yumrepo['mosquitto']]
   }
 
-if $::conf_template != undef {
-  file { '/etc/mosquitto/conf.d/mqtt.conf':
-    ensure  => file,
-    content => template($conf_template),
-    require => [
-      Package['mosquitto'],
-      Package['libmosquitto-devel'],
-      Package['libmosquittopp-devel']]
+  if $::conf_template != undef {
+    file { '/etc/mosquitto/conf.d/mqtt.conf':
+      ensure  => file,
+      content => template($conf_template),
+      require => [
+        Package['mosquitto'],
+        Package['libmosquitto-devel'],
+        Package['libmosquittopp-devel']]
+    }
   }
 }
