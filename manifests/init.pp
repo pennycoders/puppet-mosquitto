@@ -45,7 +45,7 @@ class mosquitto (
     require => [Yum::Managed_yumrepo['mosquitto']]
   }
 
-  if $::conf_template != undef {
+  if $conf_template != undef {
     file { '/etc/mosquitto/conf.d/mqtt.conf':
       ensure  => file,
       content => template($conf_template),
