@@ -7,10 +7,10 @@ allow_anonymous <%= @allow_anonymous %>
 auth_opt_qos <%= @auth_opt_qos %>
 
 #The number of seconds that mosquitto will wait between each time it saves the in-memory database to disk. If set to 0, the in-memory database will only be saved when mosquitto exits or when receiving the SIGUSR1 #signal. Note that this setting only has an effect if persistence is enabled. Defaults to 1800 seconds (30 minutes). Reloaded on reload signal.
-autosave_interval = <%= @autosave_interval %>
+autosave_interval <%= @autosave_interval %>
 
 #If true, mosquitto will count the number of subscription changes, retained messages received and queued messages and if the total exceeds autosave_interval then the in-memory database will be saved to disk. If #false, mosquitto will save the in-memory database to disk by treating autosave_interval as a time in seconds. Reloaded on reload signal.
-autosave_on_changes = <%= @autosave_on_changes %>
+autosave_on_changes <%= @autosave_on_changes %>
 
 #If set to true, the log will include entries when clients connect and disconnect. If set to false, these entries will not appear. Reloaded on reload signal.
 connection_messages <%= @connection_messages %>
