@@ -6,8 +6,8 @@ This is a puppet module to manage mosquitto ( see http://mosquitto.org/ )
 
     class {'nginx':
        manage_repo => true,
-     manage_service => true,
-     conf_template => 'mosquitto/mqtt.conf.erb'
+       manage_service => true,
+       conf_template => 'mosquitto/mqtt.conf.erb'
     }
 
 #  Paramenters:
