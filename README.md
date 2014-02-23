@@ -2,7 +2,7 @@
 
 This is a puppet module to manage mosquitto ( see http://mosquitto.org/ )
 
-# Example usage: #
+# Example usage:
 
     class {'nginx':
        manage_repo => true,
@@ -10,7 +10,7 @@ This is a puppet module to manage mosquitto ( see http://mosquitto.org/ )
      conf_template => 'mosquitto/mqtt.conf.erb'
     }
 
-#  Paramenters: # 
+#  Paramenters:
 
       Key name                        Def. value.
     
