@@ -33,3 +33,6 @@ This is a puppet module to manage mosquitto ( see http://mosquitto.org/ )
       $listen_ip                    = '0.0.0.0',
       $listen_port                  = '2000',
       $max_connections              = '-1'
+
+
+#### NOTE: This module has only been tested on CentOS 6.5! 
