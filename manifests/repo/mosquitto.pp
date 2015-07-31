@@ -10,4 +10,6 @@ class mosquitto::repo::mosquitto {
     gpgcheck => 1,
     gpgkey   => 'http://download.opensuse.org/repositories/home:/oojah:/mqtt/CentOS_CentOS-6/repodata/repomd.xml.key'
   }
+
+  Yumrepo['mosquitto'] -> Package [ 'mosquitto', 'libmosquitto-devel', 'libmosquittopp-devel']
 }
