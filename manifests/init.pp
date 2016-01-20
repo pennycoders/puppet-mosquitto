@@ -90,7 +90,6 @@ class mosquitto (
     'libmosquitto-devel',
     'libmosquittopp-devel']:
     ensure  => present,
-    require => [Yum::Managed_yumrepo['mosquitto']]
   }
 
   if $conf_template != undef {
